@@ -87,7 +87,7 @@ def add_rb(input_template, input_unit_system, lid, lid_id, roofs, roof_sc, count
     #figure out if there are too many rain barrels
     upper_bound = floor(float((lid_base_sc_imperv_area.to(lid_area_unit))/(ind_roof+lid['area']*lid_area_unit)))
     if upper_bound < 0:
-	upper_bound = 0 
+        upper_bound = 0 
 
     excess = int(lid_num_units - upper_bound)
     if excess <= 0:
