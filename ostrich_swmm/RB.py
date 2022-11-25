@@ -94,7 +94,7 @@ def add_rb(input_template, input_unit_system, lid, lid_id, roofs, roof_sc, count
         excess = 0
     else: 
         lid_num_units = lid_num_units - excess
-        print "OSTRICH input for subcat {0} had too many lid units, changing to max number {1}".format(lid_sc_name, lid_num_units)
+        print("OSTRICH input for subcat {0} had too many lid units, changing to max number {1}".format(lid_sc_name, lid_num_units))
 
     lid['number']= lid_num_units
     r_num_units = lid_num_units
