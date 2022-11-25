@@ -6,7 +6,7 @@ from math import floor, sqrt
 
 from . import config as cfg
 from . import units
-import inject as inj
+import ostrich_swmm.inject as inj
 from .swmm import input as si
 
 def area_units(input_unit_system):
