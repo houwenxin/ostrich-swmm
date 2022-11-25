@@ -6,7 +6,7 @@ from math import floor, sqrt
 
 from . import config as cfg
 from . import units
-import inject as inj
+import ostrich_swmm.inject as inj
 from .swmm import input as si
 from . import LID
 
@@ -67,14 +67,14 @@ def add_pp(input_template, input_unit_system, lid, lid_id, count):
     #figure out if there is too much permeable pavement being added - dependent on impervious area
     upper_bound = floor(float((lid_base_sc_imperv_area.to(lid_area_unit))/(lid['area']*lid_area_unit)))
     if upper_bound < 0:
-	upper_bound = 0 
+        upper_bound = 0 
 
     excess = int(lid_num_units - upper_bound)
     if excess <= 0:
         excess = 0
     else: 
         lid_num_units = lid_num_units - excess
-        print "OSTRICH input for subcat {0} had too many lid units, changing to max number {1}".format(lid_sc_name, lid_num_units)
+        print("OSTRICH input for subcat {0} had too many lid units, changing to max number {1}".format(lid_sc_name, lid_num_units))
 
     lid['number']= lid_num_units
 	
